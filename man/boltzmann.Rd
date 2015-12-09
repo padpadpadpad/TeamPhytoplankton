@@ -1,0 +1,49 @@
+\name{boltzmann}
+\alias{boltzmann}
+\title{
+Fits the traditional temperature centred Boltzmann function to data
+}
+\description{
+Fits the traditional temperature centred Boltzmann function to data. If no high temperature inactivation is present then this allows for modelling of that data. Has a term in for whether the data is log transformed or not
+}
+\usage{
+boltzmann(ln.c, Ea, temp, Tc, log = c("Y", "N"))
+}
+\arguments{
+  \item{ln.c}{
+Specific rate (of metabolism) at Tc
+}
+  \item{Ea}{
+Activation energy
+}
+  \item{temp}{
+Temperature in K
+}
+  \item{Tc}{
+#standardization temperature (in ºC, arbitrary)
+}
+  \item{log}{
+Whether or not the data is log transformed (potential values are "Y" or "N"). Defaults to "Y".
+}
+}
+\author{
+Daniel Padfield
+}
+
+\examples{
+## The function is currently defined as
+function (ln.c, Ea, temp, Tc, log = c("Y", "N")) 
+{
+    Tc <- 273.15 + Tc
+    k <- 8.62e-05
+    boltzmann.term <- ln.c + log(exp(Ea/k * (1/Tc - 1/temp)))
+    exp.boltzmann.term <- ln.c * exp(Ea/k * (1/Tc - 1/temp))
+    if (missing(log)) 
+        return(boltzmann.term)
+    if (log == "Y") 
+        return(boltzmann.term)
+    if (log == "N") 
+        return(exp.boltzmann.term)
+  }
+}
+
