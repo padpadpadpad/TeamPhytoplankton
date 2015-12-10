@@ -16,11 +16,11 @@ quasi.rsq.nls - calculates a pseudo-rsquared value for non-linear models.
 
 # Installation from GitHub
 
-install.packages('devtools')
+install.packages("devtools")
 
 library(devtools)
 
-install_github('TeamPhytoplankton')
+install_github("TeamPhytoplankton")
 
 library(TeamPhytoplankton)
 
