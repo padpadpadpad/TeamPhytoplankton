@@ -20,7 +20,7 @@ install.packages("devtools")
 
 library(devtools)
 
-install_github("TeamPhytoplankton")
+install_github("padpadpadpad/TeamPhytoplankton")
 
 library(TeamPhytoplankton)
 
