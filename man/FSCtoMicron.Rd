@@ -50,7 +50,4 @@ data <- data.frame(length = c(1,  2,  4, 6, 10, 15), FSC.H = c(58127.95,   72891
 
 FSCtoMicron(data$FSC.H)
 
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+}

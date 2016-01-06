@@ -3,7 +3,7 @@
 \alias{TeamPhytoplankton}
 \docType{package}
 \title{
-TEAM PHYTOPLANKTON FUNCTIONS
+Team Phytoplankton Functions
 }
 \description{
 A place for all Team Phytoplankton functions to make our lives a little easier
@@ -11,7 +11,7 @@ A place for all Team Phytoplankton functions to make our lives a little easier
 \details{
 Just thought I would put all the functions Team Phytoplankton use regularly into a fancy little package. Is a work in progress but currently the functions included are:
 
-Boltzmann()
+boltzmann()
 
 schoolfield.high()
 
@@ -24,21 +24,29 @@ Pmax()
 Platt_PI()
 
 Topt()
+
+FSCtoMicron()
+
+inv.temp()
+
+quasi.rsq.nls()
+
+Eilers_PI()
+
+nlsLoop()
+
 }
 \author{
 Daniel Padfield
 
-Maintainer: Daniel Padfield
+Maintainer: Daniel Padfield - d.padfieldscfc@gmail.com
 }
 \references{
-~~ Literature or other references for background information ~~
+
 }
-~~ Optionally other standard keywords, one per line, from file ~~
-~~ KEYWORDS in the R documentation directory ~~
 \keyword{ package }
 \seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
+GitHub link - https://github.com/padpadpadpad/TeamPhytoplankton
 }
 \examples{
 ~~ simple examples of the most important functions ~~

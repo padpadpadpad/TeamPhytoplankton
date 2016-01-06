@@ -16,7 +16,6 @@ Calculated as either:
 \usage{
 inv.temp(x, K = c("Y", "N"), Tc)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
 temperature data, can be K or ºC. Default is for Kelvin.
@@ -48,8 +47,6 @@ Daniel Padfield
 %%  ~~further notes~~
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
@@ -63,3 +60,4 @@ y <- seq(1,30,1)
 inv.temp(y, 'N')
 inv.temp(y, 'N', Tc = 15)
 
+}
