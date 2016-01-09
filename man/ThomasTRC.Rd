@@ -5,17 +5,23 @@
 Fits a thermal performance curve to data using the formula given by Thomas et al. 2012.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Fits a thermal performance curve to data such as the following equation :
+
+g(T) = a*[1 - ((Topt-T)/(w/2))^2]
+
+where a is a scaling coefficient, Topt is the optimum temperature and w is the range of temperatures over which the rate is positive. 
+
+Tmin and Tmax can be calculated by subtracting or adding w/2 to Topt respectively. See ?Tmin and ?Tmax.
 }
 \usage{
-ThomasTRC(a, z, w, temp)
+ThomasTRC(a, Topt, w, temp)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{a}{
 scaling parameter for the curve.
 }
-  \item{z}{
+  \item{Topt}{
 controls the position of where the quadratic portion reaches its maximum. So in essence z is the Topt.
 }
   \item{w}{
@@ -29,14 +35,12 @@ temperature, can be in degrees centigrade or Kelvin
 Rates need to be in raw form not logged as its important that negative rates are actually negative rates to be able to correctly calculate w
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+returns the biological rate at a given temperature depending on the parameters controlling the model.
 }
 \references{
-%% ~put references to the literature/web site here ~
+Thomas, M.K., Kremer, C.T., Klausmeier, C. a & Litchman, E. (2012) A global pattern of thermal adaptation in marine phytoplankton. Science, 338, 1085–8.
+
+Thomas, M.K., Kremer, C.T. & Litchman, E. (2015) Environment and evolutionary history determine the global biogeography of phytoplankton temperature traits. Global Ecology and Biogeography, 25, 75-86.
 }
 \author{
 Daniel Padfield
@@ -45,7 +49,6 @@ Daniel Padfield
 %%  ~~further notes~~
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
