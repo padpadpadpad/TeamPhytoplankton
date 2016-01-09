@@ -1,3 +1,3 @@
 Tmax <- function(Topt, w){
-  return(Tmax + w/2)
+  return(Topt + w/2)
 }
