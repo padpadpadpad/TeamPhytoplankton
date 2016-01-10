@@ -32,7 +32,7 @@ The column name that identifies each curve that is to be fitted. Needs to be in 
 Upper and lower boundaries for the start parameters. If missing these default to +/- 1e+09. Need to specified as a vector as : c(lower bound param 1, upper bound param 1, lower bound param 2, upper boung param 2 ...)
 }
   \item{r2}{
-Whether or not you want the quasi rsquared value to be returned. This defaults to no, to include the r2 values use r2 = 'Y'
+Whether or not you want the quasi rsquared value to be returned. This defaults to no, (so not specifying the argument or r2 = 'N results in no r2 values being returned), to include the r2 values use r2 = 'Y'
   }
 
   \item{\dots}{
