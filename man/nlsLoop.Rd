@@ -10,7 +10,7 @@ Fits the best possible model to each of a set of curves using non-linear least s
 Returns a dataframe of the best estimated parameter fits for each level of id_col with asosciated AIC score.
 }
 \usage{
-nlsLoop(data, model, tries, id_col, param_bds, ...)
+nlsLoop(data, model, tries, id_col, param_bds, r2, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -30,8 +30,11 @@ The column name that identifies each curve that is to be fitted. Needs to be in 
 
   \item{param_bds}{
 Upper and lower boundaries for the start parameters. If missing these default to +/- 1e+09. Need to specified as a vector as : c(lower bound param 1, upper bound param 1, lower bound param 2, upper boung param 2 ...)
-
 }
+  \item{r2}{
+Whether or not you want the quasi rsquared value to be returned. This defaults to no, to include the r2 values use r2 = 'Y'
+  }
+
   \item{\dots}{
 Extra arguments to pass to nlsLM if necessary.
 }
@@ -65,6 +68,7 @@ results <- nlsLoop(data,
                    model = rate ~ schoolfield.high(ln.c, Ea, Eh, Th,temp = K, Tc = 25),
                    tries = 1000,
                    id_col = 'id',
+                   r2 = 'Y',
                    param_bds = c(0,2,0,2,2,8,300,330))
                    
 }

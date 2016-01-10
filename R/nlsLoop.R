@@ -4,7 +4,7 @@
 
 
 # function
-nlsLoop <- function(data, model, tries, id_col, param_bds, ...){
+nlsLoop <- function(data, model, tries, id_col, param_bds, r2 = 'N', ...){
   
   # load prerequisites
   library(minpack.lm)
@@ -59,6 +59,7 @@ nlsLoop <- function(data, model, tries, id_col, param_bds, ...){
   colnames(res) <- c(id_col, params_bds$param)
   res$AIC <- 0
   res$quasi.r2 <- 0
+
   
   strt <- NULL
   
@@ -94,13 +95,15 @@ nlsLoop <- function(data, model, tries, id_col, param_bds, ...){
       if(!is.null(fit) && res[i, 'AIC'] == 0 | !is.null(fit) && res[i, 'AIC'] > AIC(fit)){
         
         res[i, 'AIC'] <- AIC(fit)
-        res[i, 'quasi.r2'] <- quasi.rsq.nls(mdl = fit, y = data.fit[colnames(data.fit) == formula[[2]]], param = length(params))
+        if(r2 == 'Y') {res[i, 'quasi.r2'] <- quasi.rsq.nls(mdl = fit, y = data.fit[colnames(data.fit) == formula[[2]]], param = length(params))}
         for(k in 1:length(params)){
           res[i, params[k]] <- as.numeric(coef(fit)[k])
         }
       }
     }
   }
+  
+  if(r2 == 'N') {res <- res[,-grep('quasi.r2', colnames(res))]}
   
   return(res)
   
