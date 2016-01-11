@@ -10,7 +10,7 @@ Fits the best possible model to each of a set of curves using non-linear least s
 Returns a dataframe of the best estimated parameter fits for each level of id_col with asosciated AIC score.
 }
 \usage{
-nlsLoop(data, model, tries, id_col, param_bds, r2, ...)
+nlsLoop(data, model, tries, id_col, param_bds, r2, supp.errors, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -33,6 +33,10 @@ Upper and lower boundaries for the start parameters. If missing these default to
 }
   \item{r2}{
 Whether or not you want the quasi rsquared value to be returned. This defaults to no, (so not specifying the argument or r2 = 'N results in no r2 values being returned), to include the r2 values use r2 = 'Y'
+  }
+  
+  \item{supp.errors}{
+If supp.errors = 'Y' then no error messages will be shown from the actual nlsLM function, reducing the number of error messages received while the model works through starting parameters from which the model cannot converge. Advised to only be used once it is expected that error messages in the nlsLM function are not important.
   }
 
   \item{\dots}{
@@ -69,6 +73,7 @@ results <- nlsLoop(data,
                    tries = 1000,
                    id_col = 'id',
                    r2 = 'Y',
+                   supp.errors = 'Y',
                    param_bds = c(0,2,0,2,2,8,300,330))
                    
 }

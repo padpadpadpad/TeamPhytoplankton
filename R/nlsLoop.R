@@ -4,7 +4,7 @@
 
 
 # function
-nlsLoop <- function(data, model, tries, id_col, param_bds, r2 = 'N', ...){
+nlsLoop <- function(data, model, tries, id_col, param_bds, r2 = 'N', supp.errors = 'N', ...){
   
   # load prerequisites
   library(minpack.lm)
@@ -84,10 +84,17 @@ nlsLoop <- function(data, model, tries, id_col, param_bds, r2 = 'N', ...){
         start.vals[[params[k]]] <- strt[strt$param == params[k],]$value[j]
       }
       # try and fit the model for every set of searching parameters
-      try(fit <- nlsLM(formula, 
+      if(supp.errors == 'Y'){
+        try(fit <- nlsLM(formula, 
                        start=start.vals,
                        control = cont.nlsLM,
-                       data=data.fit, ...))
+                       data=data.fit, ...),
+          silent = TRUE)}
+      if(supp.errors != 'Y'){
+          try(fit <- nlsLM(formula, 
+                       start=start.vals,
+                       control = cont.nlsLM,
+                       data=data.fit, ...))}
       
       # if it is the first fit of the model, output the results of the model in the dataframe
       # if the AIC score of the next fit model is < the AIC of the fit in the dataframe, replace
@@ -104,7 +111,9 @@ nlsLoop <- function(data, model, tries, id_col, param_bds, r2 = 'N', ...){
   }
   
   if(r2 == 'N') {res <- res[,-grep('quasi.r2', colnames(res))]}
+  if(supp.errors == 'Y'){cat('\nWarning - Errors have been suppressed from nlsLM().\n')}
+  if(r2 == 'Y'){cat('Warning - R squared values for non-linear models should be used with caution. See references in ?quasi.r2 for details.\n')}
   
   return(res)
-  
+
 }
