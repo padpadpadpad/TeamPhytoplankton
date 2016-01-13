@@ -1,9 +1,9 @@
 Package: TeamPhytoplankton
 Type: Package
-Title: What the package does (short line)
+Title: For studies into thermal adaptation
 Version: 1.0
 Date: 2015-08-24
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
+Author: Daniel Padfield <d.padfieldscfc@gmail.com
+Description: A bunch of useful functions for the study of thermal adaptation
 License: What license is it under?
+URL: https://github.com/padpadpadpad/TeamPhytoplankton
