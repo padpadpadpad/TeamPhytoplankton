@@ -14,13 +14,10 @@ nlsLoop <- function(data, model, tries, id_col, param_bds, r2 = 'N', supp.errors
   # set up dataframe for parameter bounds
   # set up dataframe for parameter bounds
   params_bds1 <- all.vars(formula[[3]])
-  params_bds <- NULL
-  for(i in 1:length(colnames(data))){
-    params_bds <- c(params_bds, params_bds1[-grep(paste('\\b',colnames(data)[i],'\\b', sep =''), params_bds1)])
-  }
+  params_bds <- params_bds1[! params_bds1 %in% colnames(data)]
   params <- unique(params_bds)
   params_bds <- data.frame(param = params_bds, stringsAsFactors = FALSE)
-  
+
   params_bds$low.bds <- NA
   params_bds$high.bds <- NA
   
