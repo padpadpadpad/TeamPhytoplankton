@@ -1,5 +1,5 @@
-\name{Tmax}
-\alias{Tmax}
+\name{Thomas.Tmax}
+\alias{Thomas.Tmax}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Calculates Tmax for the Thomas TRC

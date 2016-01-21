@@ -1,5 +1,5 @@
-\name{Tmin}
-\alias{Tmin}
+\name{Thomas.Tmin}
+\alias{Thomas.Tmin}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Calculates Tmin for the Thomas TRC
