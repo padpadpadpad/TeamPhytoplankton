@@ -7,9 +7,3 @@ Author: Daniel Padfield <d.padfieldscfc@gmail.com
 Description: A bunch of useful functions for the study of thermal adaptation
 License: What license is it under?
 URL: https://github.com/padpadpadpad/TeamPhytoplankton
-Imports:
-    minpack.lm,
-    tidyr,
-    data.table,
-    plyr,
-    tools
