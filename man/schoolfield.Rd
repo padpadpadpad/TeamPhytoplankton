@@ -56,9 +56,10 @@ Daniel Padfield
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link{schoolfield.high}}
+\code{\link{schoolfield.high}} for applying the high temperature inactivation only modification of the Sharpe-Schoolfield model.
 
-\code{\link{Topt}}
+\code{\link{Topt}} for calculating the optimum temperature of the Sharpe-Schoolfield model.
+
 }
 \examples{
 }

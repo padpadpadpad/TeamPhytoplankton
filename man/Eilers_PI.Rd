@@ -25,7 +25,7 @@ Light
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+When using nlsLoop, set the parameters lower limits to 0 as the equation has two solutions and with equivalent AIC scores so could return some unwanted negative values for some parameters.
 }
 \value{
 %%  ~Describe the value returned
@@ -47,16 +47,10 @@ Daniel Padfield
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{Platt_PI}} for fitting an alternative photosynthesis irradiance curve
 }
 \examples{
-## The function is currently defined as
-function (Pmax, Iopt, a, I) 
-{
-    pi <- (Pmax * I)/((Pmax/(a * Iopt^2)) * I^2 + ((1 - (2 * 
-        Pmax)/(a * Iopt)) * I) + (Pmax/a))
-    return(pi)
-  }
+
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

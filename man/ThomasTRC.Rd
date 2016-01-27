@@ -11,7 +11,7 @@ g(T) = a*[1 - ((Topt-T)/(w/2))^2]
 
 where a is a scaling coefficient, Topt is the optimum temperature and w is the range of temperatures over which the rate is positive. 
 
-Tmin and Tmax can be calculated by subtracting or adding w/2 to Topt respectively. See ?Tmin and ?Tmax.
+Tmin and Tmax can be calculated by subtracting or adding w/2 to Topt respectively. See \code{\link{Thomas.Tmax}} and \code{\link{Thomas.Tmin}}.
 }
 \usage{
 ThomasTRC(a, Topt, w, temp)
@@ -51,7 +51,7 @@ Daniel Padfield
 
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{schoolfield.high}} and \code{\link{schoolfield}} for fitting alternative thermal response curves.
 }
 \examples{
 temp <- seq(1,30,1)

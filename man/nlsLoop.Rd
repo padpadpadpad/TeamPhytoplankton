@@ -65,7 +65,10 @@ lower/upper = c() where these represent upper and lower boundaries for parameter
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{quasi.r2}} for details on the calculation of r squared values for non linear models.
+
+\code{\link{nlsLM}} for details on additional arguments to pass to the nlsLM function.
+
 }
 \examples{
 results <- nlsLoop(data,

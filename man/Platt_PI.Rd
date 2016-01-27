@@ -25,7 +25,7 @@ The steepness and extent of photoinhibition as light levels increase past the op
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+When using nlsLoop, set the parameters lower limits to 0 as the equation has two solutions and with equivalent AIC scores so could return some unwanted negative values for some parameters.
 }
 \value{
 %%  ~Describe the value returned
@@ -47,16 +47,10 @@ Daniel Padfield
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{Eilers_PI}} for fitting an alternative photosynthesis irradiance curve.
 }
 \examples{
 
-## The function is currently defined as
-function (I, ps, alpha, beta) 
-{
-    pi <- ps * (1 - exp(-alpha * I/ps)) * exp((-beta * I)/ps)
-    return(pi)
-  }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
