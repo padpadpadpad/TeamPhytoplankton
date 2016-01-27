@@ -82,7 +82,7 @@ nlsLoop <- function(data, model, tries, id_col, param_bds, r2 = 'N', supp.errors
       }
       # try and fit the model for every set of searching parameters
       if(supp.errors == 'Y'){
-        try(fit <- nlsLM(formula, 
+        try(fit <- minpack.lm::nlsLM(formula, 
                        start=start.vals,
                        control = cont.nlsLM,
                        data=data.fit, ...),

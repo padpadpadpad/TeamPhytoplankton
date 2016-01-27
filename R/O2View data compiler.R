@@ -2,12 +2,6 @@
 
 read_data <- function(x, start.row){
 	
-	# load in required packages
-	library(data.table)
-	library(plyr)
-	library(tools)
-	library(tidyr)
-	
 	# file name
 	file <- x
 	
@@ -42,10 +36,10 @@ read_data <- function(x, start.row){
 	data$light <- as.numeric(data$light)
 	
 	# make all the NAs the last logical value
-	data <- data %>% fill(light)
+	data <- data %>% tidyr::fill(light)
 	
 	# column for identifier
-	data$identifier <- file_path_sans_ext(file)
+	data$identifier <- tools::file_path_sans_ext(file)
 	
 	return(data)
 	
