@@ -13,7 +13,7 @@ schoolfield <- function(ln.c,Ea,El,Tl,Eh,Th,temp,Tc) {
   
   #expression for flux is the product of two terms below
   boltzmann.term <- ln.c + log(exp(Ea/k*(1/Tc - 1/temp)))  #Boltzmann term
-  inactivation.term <- log(1/(1 + exp(El/k*(1/Tl - 1/temp)) + exp(Eh/k*(1/Th - 1/temp)))) 
+  inactivation.term <- log(1/(1 + exp(-El/k*(1/Tl - 1/temp)) + exp(Eh/k*(1/Th - 1/temp)))) 
   
   #predicted flux (log scale)
   return(boltzmann.term + inactivation.term)
