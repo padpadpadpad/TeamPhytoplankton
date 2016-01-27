@@ -29,6 +29,7 @@ Photosynthesis irradiance curves of Chlorella vulgaris taken at different assay 
 data(PI_data)
 
 library(ggplot2)
+
 ggplot(PI_data) +
   geom_point(aes(light, GPP), shape = 21) +
   facet_wrap(~ temp) +
