@@ -3,7 +3,7 @@ Type: Package
 Title: For studies into thermal adaptation
 Version: 1.0
 Date: 2015-08-24
-Authors@R: as.person("Daniel Padfield <d.padfieldscfc@gmail.com" [aut, cre]")
+Authors@R: as.person("Daniel Padfield <d.padfieldscfc@gmail.com> [aut, cre]")
 Description: A bunch of useful functions for the study of thermal adaptation
 License: What license is it under?
 URL: https://github.com/padpadpadpad/TeamPhytoplankton
