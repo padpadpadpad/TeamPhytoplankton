@@ -14,7 +14,7 @@ schoolfield.high(ln.c, Ea, Eh, Th, temp, Tc)
 The specific rate of metabolism (log scale)
 }
   \item{Ea}{
-Activation energy 
+Activation energy
 }
   \item{Eh}{
 High temperare De-Activation energy
@@ -47,4 +47,4 @@ Daniel Padfield
 \examples{
 
 }
-}
+

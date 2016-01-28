@@ -44,14 +44,10 @@ Daniel Padfield
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-Platt_PI()
+\code{\link{Platt_PI}} for the original model fit.
 }
 \examples{
-## The function is currently defined as
-function (ps, alpha, beta) 
-{
-    return(ps/(((alpha + beta)/alpha) * (beta/(alpha + beta))^(-beta/alpha)))
-  }
+
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

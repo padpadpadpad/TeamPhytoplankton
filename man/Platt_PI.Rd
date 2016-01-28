@@ -48,6 +48,8 @@ Daniel Padfield
 
 \seealso{
 \code{\link{Eilers_PI}} for fitting an alternative photosynthesis irradiance curve.
+\code{\link{Pmax}} for getting the maximal photosynthetic rate of the Platt fitted curve.
+
 }
 \examples{
 
