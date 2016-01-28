@@ -4,7 +4,7 @@
 
 
 # function
-nlsLoop <- function(data, model, tries, id_col, param_bds, r2 = 'N', supp.errors = 'N', ...){
+nlsLoop <- function(data, model, tries, id_col, param_bds, r2 = 'N', supp.errors = 'N', AICc = 'Y', ...){
   
   # load prerequisites
   library(minpack.lm)
@@ -96,9 +96,21 @@ nlsLoop <- function(data, model, tries, id_col, param_bds, r2 = 'N', supp.errors
       # if it is the first fit of the model, output the results of the model in the dataframe
       # if the AIC score of the next fit model is < the AIC of the fit in the dataframe, replace
       # the output to ensure the best model is selected
-      if(!is.null(fit) && res[i, 'AIC'] == 0 | !is.null(fit) && res[i, 'AIC'] > AIC(fit)){
+      if(AICc == 'N'){
+        if(!is.null(fit) && res[i, 'AIC'] == 0 | !is.null(fit) && res[i, 'AIC'] > AIC(fit)){
         
         res[i, 'AIC'] <- AIC(fit)
+        if(r2 == 'Y') {res[i, 'quasi.r2'] <- quasi.rsq.nls(mdl = fit, y = data.fit[colnames(data.fit) == formula[[2]]], param = length(params))}
+        for(k in 1:length(params)){
+          res[i, params[k]] <- as.numeric(coef(fit)[k])
+        }
+        }
+      }
+      
+      else{
+        if(!is.null(fit) && res[i, 'AIC'] == 0 | !is.null(fit) && res[i, 'AIC'] > MuMIn::AICc(fit)){
+        
+        res[i, 'AIC'] <- MuMIn::AICc(fit)
         if(r2 == 'Y') {res[i, 'quasi.r2'] <- quasi.rsq.nls(mdl = fit, y = data.fit[colnames(data.fit) == formula[[2]]], param = length(params))}
         for(k in 1:length(params)){
           res[i, params[k]] <- as.numeric(coef(fit)[k])
@@ -106,7 +118,7 @@ nlsLoop <- function(data, model, tries, id_col, param_bds, r2 = 'N', supp.errors
       }
     }
   }
-  
+  }  
   if(r2 == 'N') {res <- res[,-grep('quasi.r2', colnames(res))]}
   if(supp.errors == 'Y'){cat('\nWarning - Errors have been suppressed from nlsLM().\n')}
   if(r2 == 'Y'){cat('Warning - R squared values for non-linear models should be used with caution. See references in ?quasi.r2 for details.\n')}

@@ -10,7 +10,7 @@ Fits the best possible model to each of a set of curves using non-linear least s
 Returns a dataframe of the best estimated parameter fits for each level of id_col with asosciated AIC score.
 }
 \usage{
-nlsLoop(data, model, tries, id_col, param_bds, r2, supp.errors, ...)
+nlsLoop(data, model, tries, id_col, param_bds, r2, supp.errors, AICc,...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -37,6 +37,10 @@ Whether or not you want the quasi rsquared value to be returned. This defaults t
   
   \item{supp.errors}{
 If supp.errors = 'Y' then no error messages will be shown from the actual nlsLM function, reducing the number of error messages received while the model works through starting parameters from which the model cannot converge. Advised to only be used once it is expected that error messages in the nlsLM function are not important.
+  }
+  
+  \item{AICc}{
+Whether or not the small sample AIC should be used. Defaults to 'Y'. Override this using AICc == 'N'. AICc should be used instead of AIC when sample size is small in comparison to the number of estimated parameters (Burnham & Anderson 2002 recommend its use when n / K < 40).
   }
 
   \item{\dots}{
@@ -69,14 +73,18 @@ lower/upper = c() where these represent upper and lower boundaries for parameter
 
 \code{\link{nlsLM}} for details on additional arguments to pass to the nlsLM function.
 
+See AICc in the MuMIn package for application of AICc.
 }
 \examples{
-results <- nlsLoop(data,
-                   model = rate ~ schoolfield.high(ln.c, Ea, Eh, Th,temp = K, Tc = 25),
-                   tries = 1000,
-                   id_col = 'id',
-                   r2 = 'Y',
-                   supp.errors = 'Y',
-                   param_bds = c(0,2,0,2,2,8,300,330))
+
+data(PI_data)
+
+nlsLoop(PI_data,
+         GPP ~ Eilers_PI(Pmax, Iopt, a, I = light),
+         tries = 10,
+         id_col = 'temp',
+         r2 = 'Y',
+         supp.errors = 'Y',
+         param_bds = c(0,20000, 0,1000, 0, 500))
                    
 }
