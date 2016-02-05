@@ -73,7 +73,7 @@ lower/upper = c() where these represent upper and lower boundaries for parameter
 
 \code{\link{nlsLM}} for details on additional arguments to pass to the nlsLM function.
 
-See AICc in the MuMIn package for application of AICc.
+See AICc in the AICcmodavg package for application of AICc.
 }
 \examples{
 

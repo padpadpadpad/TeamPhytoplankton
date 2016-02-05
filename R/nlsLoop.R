@@ -110,7 +110,7 @@ nlsLoop <- function(data, model, tries, id_col, param_bds, r2 = 'N', supp.errors
       else{
         if(!is.null(fit) && res[i, 'AIC'] == 0 | !is.null(fit) && res[i, 'AIC'] > MuMIn::AICc(fit)){
         
-        res[i, 'AIC'] <- MuMIn::AICc(fit)
+        res[i, 'AIC'] <- AICcmodavg::AICc(fit)
         if(r2 == 'Y') {res[i, 'quasi.r2'] <- quasi.rsq.nls(mdl = fit, y = data.fit[colnames(data.fit) == formula[[2]]], param = length(params))}
         for(k in 1:length(params)){
           res[i, params[k]] <- as.numeric(coef(fit)[k])
