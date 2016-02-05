@@ -10,5 +10,6 @@ URL: https://github.com/padpadpadpad/TeamPhytoplankton
 BugReports: https://github.com/padpadpadpad/TeamPhytoplankton/issues
 Suggests: minpack.lm,
     tools,
-    tidyr
+    tidyr,
+    MuMIn
 LazyData: true

@@ -5,9 +5,11 @@
 
 # function
 nlsLoop <- function(data, model, tries, id_col, param_bds, r2 = 'N', supp.errors = 'N', AICc = 'Y', ...){
+    if (!requireNamespace("MuMIn", quietly = TRUE)){
+      stop("Package is needed for calculation of AICc. Please install. Can be bypassed by using classic AIC using AICc = 'N'",
+           call. = FALSE)
+    }
   
-  # load prerequisites
-  library(minpack.lm)
   
   formula <- as.formula(model)
   
@@ -110,7 +112,7 @@ nlsLoop <- function(data, model, tries, id_col, param_bds, r2 = 'N', supp.errors
       else{
         if(!is.null(fit) && res[i, 'AIC'] == 0 | !is.null(fit) && res[i, 'AIC'] > MuMIn::AICc(fit)){
         
-        res[i, 'AIC'] <- AICcmodavg::AICc(fit)
+        res[i, 'AIC'] <- MuMIn::AICc(fit)
         if(r2 == 'Y') {res[i, 'quasi.r2'] <- quasi.rsq.nls(mdl = fit, y = data.fit[colnames(data.fit) == formula[[2]]], param = length(params))}
         for(k in 1:length(params)){
           res[i, params[k]] <- as.numeric(coef(fit)[k])
