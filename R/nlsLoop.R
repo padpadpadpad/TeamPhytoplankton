@@ -6,7 +6,7 @@
 # function
 nlsLoop <- function(data, model, tries, id_col, param_bds, r2 = 'N', supp.errors = 'N', AICc = 'Y', ...){
     if (!requireNamespace("MuMIn", quietly = TRUE)){
-      stop("Package is needed for calculation of AICc. Please install. Can be bypassed by using classic AIC using AICc = 'N'",
+      stop("The MuMIn package is needed for calculation of AICc. Please install. Can be bypassed by using classic AIC using AICc = 'N'",
            call. = FALSE)
     }
   
@@ -47,7 +47,7 @@ nlsLoop <- function(data, model, tries, id_col, param_bds, r2 = 'N', supp.errors
   }
   
   # nlsLM controls - this can stay the same, potential to be overridden
-  cont.nlsLM <-nls.lm.control(maxiter = 1000, ftol = .Machine$double.eps, ptol = .Machine$double.eps) 
+  cont.nlsLM <-minpack.lm::nls.lm.control(maxiter = 1000, ftol = .Machine$double.eps, ptol = .Machine$double.eps) 
   
   # create a unique id vector
   id <- unique(data[,id_col])
