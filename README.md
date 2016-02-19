@@ -20,14 +20,12 @@ Installation has usually been made possible using Hadley Wickham's "devtools" pa
 
 ```{R}
 install.packages("devtools")
-
 # or
 install.packages("ghit")
 
+# load package then download TeamPhytoplankton
 library(devtools)
-
 install_github("padpadpadpad/TeamPhytoplankton")
-
 library(TeamPhytoplankton)
 ```
 
