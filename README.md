@@ -16,11 +16,17 @@ quasi.rsq.nls - calculates a pseudo-rsquared value for non-linear models.
 
 # Installation from GitHub
 
+Installation has usually been made possible using Hadley Wickham's "devtools" package. However it has a lot of dependencies and proves problematic for some Windows users so there is new package on CRAN called "ghit" that should alleviate some of these issues.
+
+```{R}
 install.packages("devtools")
+# or
+install.packages("ghit")
 
+# load package then download TeamPhytoplankton
 library(devtools)
-
 install_github("padpadpadpad/TeamPhytoplankton")
-
 library(TeamPhytoplankton)
+```
 
+Voila!
