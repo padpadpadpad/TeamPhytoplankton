@@ -4,6 +4,74 @@
 
 
 # function
+
+
+#' Loops through a non-linear model on many different curves to find the best
+#' possible fit.
+#' 
+#' Fits the best possible model to each of a set of curves using non-linear
+#' least squares regression using nlsLM. The best fit is determined using AIC
+#' scores.
+#' 
+#' Returns a dataframe of the best estimated parameter fits for each level of
+#' id_col with asosciated AIC score.
+#' 
+#' %% ~~ If necessary, more details than the description above ~~
+#' 
+#' @param data Data that includes the rates
+#' @param model The formula that is usually fed into nlsLM. Make sure there is
+#' a y and an x (the column in your dataframe that is the explanatory variable)
+#' eg. ln.resp.cor ~ schoolfield.high(ln.c, Ea, Eh, Th, temp=K, Tc = 25)
+#' @param tries Number of combinations of different starting parameters that
+#' are tried on each curve.
+#' @param id_col The column name that identifies each curve that is to be
+#' fitted. Needs to be in speech marks, ' '.
+#' @param param_bds Upper and lower boundaries for the start parameters. If
+#' missing these default to +/- 1e+09. Need to specified as a vector as :
+#' c(lower bound param 1, upper bound param 1, lower bound param 2, upper boung
+#' param 2 ...)
+#' @param r2 Whether or not you want the quasi rsquared value to be returned.
+#' This defaults to no, (so not specifying the argument or r2 = 'N results in
+#' no r2 values being returned), to include the r2 values use r2 = 'Y'
+#' @param supp.errors If supp.errors = 'Y' then no error messages will be shown
+#' from the actual nlsLM function, reducing the number of error messages
+#' received while the model works through starting parameters from which the
+#' model cannot converge. Advised to only be used once it is expected that
+#' error messages in the nlsLM function are not important.
+#' @param AICc Whether or not the small sample AIC should be used. Defaults to
+#' 'Y'. Override this using AICc == 'N'. AICc should be used instead of AIC
+#' when sample size is small in comparison to the number of estimated
+#' parameters (Burnham & Anderson 2002 recommend its use when n / K < 40).
+#' @param \dots Extra arguments to pass to nlsLM if necessary.
+#' @return Returns a dataframe with the best parameter values for each curve.
+#' @note Useful additional arguments for nlsLM include: na.action = na.omit,
+#' 
+#' lower/upper = c() where these represent upper and lower boundaries for
+#' parameter estimates
+#' @author Daniel Padfield
+#' @seealso \code{\link{quasi.r2}} for details on the calculation of r squared
+#' values for non linear models.
+#' 
+#' \code{\link{nlsLM}} for details on additional arguments to pass to the nlsLM
+#' function.
+#' 
+#' See AICc in the AICcmodavg package for application of AICc.
+#' @references
+#' @examples
+#' 
+#' 
+#' data(PI_data)
+#' 
+#' nlsLoop(PI_data,
+#'          GPP ~ Eilers_PI(Pmax, Iopt, a, I = light),
+#'          tries = 10,
+#'          id_col = 'temp',
+#'          r2 = 'Y',
+#'          supp.errors = 'Y',
+#'          param_bds = c(0,20000, 0,1000, 0, 500))
+#'                    
+#' 
+#' @export nlsLoop
 nlsLoop <- function(data, model, tries, id_col, param_bds, r2 = 'N', supp.errors = 'N', AICc = 'Y', ...){
     if (!requireNamespace("MuMIn", quietly = TRUE)){
       stop("The MuMIn package is needed for calculation of AICc. Please install. Can be bypassed by using classic AIC using AICc = 'N'",

@@ -1,3 +1,38 @@
+#' Empirically calculates the maximum temperature of a schoolfield.high model
+#' fit
+#' 
+#' Creates a temporary dataframe of a wide range of temperatures (at 0.1 degree
+#' increments) and predictions based on the parameters controlling the thermal
+#' response curve. The thermal maximia is the first temperature where the rate
+#' is less than the threshold proportion of bTpeak above Topt.
+#' 
+#' %% ~~ If necessary, more details than the description above ~~
+#' 
+#' @param data The parameter data frame
+#' @param prop The proportion below bTpeak from which the thermal minima is to
+#' be calculated
+#' @param Tc The normalising temperature used in the original schoolfield.high
+#' fits
+#' @param K Whether or not Topt is in Kelvin. Defaults to 'Y'. To override
+#' default use 'N'.
+#' @param id.col The column that identifies each curve. Is equivalent to the
+#' id.col from nlsLoop.
+#' @param range The range of temperatures from which you want the Kelvin to be
+#' taken, is centred around the optimal temperature. For range = 500 and Topt =
+#' 30, the temperatures would be from 30 - 250 and 30 + 250.
+#' @return %% ~Describe the value returned %% If it is a LIST, use %%
+#' \item{comp1 }{Description of 'comp1'} %% \item{comp2 }{Description of
+#' 'comp2'} %% ...
+#' @note %% ~~further notes~~
+#' @author Daniel Padfield
+#' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~
+#' @references %% ~put references to the literature/web site here ~
+#' @keywords ~kwd1 ~kwd2
+#' @examples
+#' 
+#' 
+#' 
+#' @export SH.Tmax
 SH.Tmax <- function(data, prop, Tc, K = 'Y', id.col, range) {
   
   id2 <- unique(data[, id.col])
