@@ -14,7 +14,7 @@
 #' scores.
 #' 
 #' Returns a dataframe of the best estimated parameter fits for each level of
-#' id_col with asosciated AIC score.
+#' id_col with assOciated AIC score.
 #' 
 #' %% ~~ If necessary, more details than the description above ~~
 #' 
@@ -56,7 +56,6 @@
 #' function.
 #' 
 #' See AICc in the AICcmodavg package for application of AICc.
-#' @references
 #' @examples
 #' 
 #' 

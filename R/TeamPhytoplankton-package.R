@@ -75,8 +75,7 @@ NULL
 #' 
 #' Maintainer: Daniel Padfield - d.padfieldscfc@@gmail.com
 #' @seealso GitHub link - https://github.com/padpadpadpad/TeamPhytoplankton
-#' @references
-#' @keywords package
+#' @keywords PLANKTON, EVOLUTION, NONLINEAR MODELLING
 #' @examples
 #' 
 #' ~~ simple examples of the most important functions ~~

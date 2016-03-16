@@ -21,8 +21,6 @@
 #' taken, is centred around the optimal temperature. For range = 500 and Topt =
 #' 30, the temperatures would be from 30 - 250 and 30 + 250.
 #' @return %% ~Describe the value returned %% If it is a LIST, use %%
-#' \item{comp1 }{Description of 'comp1'} %% \item{comp2 }{Description of
-#' 'comp2'} %% ...
 #' @note %% ~~further notes~~
 #' @author Daniel Padfield
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~

@@ -15,8 +15,6 @@
 #' @param beta The steepness and extent of photoinhibition as light levels
 #' increase past the optimum
 #' @return %% ~Describe the value returned %% If it is a LIST, use %%
-#' \item{comp1 }{Description of 'comp1'} %% \item{comp2 }{Description of
-#' 'comp2'} %% ...
 #' @note %% ~~further notes~~
 #' @author Daniel Padfield
 #' @seealso \code{\link{Platt_PI}} for the original model fit.

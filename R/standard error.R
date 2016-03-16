@@ -13,8 +13,6 @@
 #' FALSE. TRUE means that both the row including NA is excluded so both the
 #' number of samples and the mean is affected
 #' @return %% ~Describe the value returned %% If it is a LIST, use %%
-#' \item{comp1 }{Description of 'comp1'} %% \item{comp2 }{Description of
-#' 'comp2'} %% ...
 #' @note %% ~~further notes~~
 #' @author Daniel Padfield
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~

@@ -8,8 +8,10 @@ Description: A bunch of useful functions for the study of thermal adaptation
 License: What license is it under?
 URL: https://github.com/padpadpadpad/TeamPhytoplankton
 BugReports: https://github.com/padpadpadpad/TeamPhytoplankton/issues
-Suggests: minpack.lm,
+Suggests:
+    minpack.lm,
     tools,
     tidyr,
     MuMIn
 LazyData: true
+RoxygenNote: 5.0.1

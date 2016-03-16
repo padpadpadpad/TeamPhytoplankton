@@ -32,8 +32,6 @@
 #' @param y the dependent variable in the model.
 #' @param param the number of parameters of the non-linear model
 #' @return %% ~Describe the value returned %% If it is a LIST, use %%
-#' \item{comp1 }{Description of 'comp1'} %% \item{comp2 }{Description of
-#' 'comp2'} %% ...
 #' @note %% ~~further notes~~
 #' @author Daniel Padfield
 #' @seealso %% ~~objects to See Also as \code{\link{help}}, ~~~

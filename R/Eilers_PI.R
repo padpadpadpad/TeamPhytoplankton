@@ -19,17 +19,12 @@
 #' @param Iopt The optimal light intensity
 #' @param a The initial slope of the curve
 #' @param I Light
-#' @return %% ~Describe the value returned %% If it is a LIST, use %%
-#' \item{comp1 }{Description of 'comp1'} %% \item{comp2 }{Description of
-#' 'comp2'} %% ...
-#' @note %% ~~further notes~~
 #' @author Daniel Padfield
 #' @seealso \code{\link{Platt_PI}} for fitting an alternative photosynthesis
 #' irradiance curve
 #' @references Eilers, P.H.. & Peeters, J.C.. (1988) A model for the
 #' relationship between light intensity and the rate of photosynthesis in
 #' phytoplankton. Ecological Modelling, 42, 199–215.
-#' @keywords ~kwd1 ~kwd2
 #' @examples
 #' 
 #' 
