@@ -7,12 +7,12 @@
 #' Uses the results of a linear regression to convert values of FSC.H on the
 #' ESI BD Accuri C6 to values of micrometres
 #' 
-#' Uses an equation of µm = (FSC.H - 75087.02)/104292.56
+#' Uses an equation of µm = 1.036827e-05*FSC.H + 1.041811
 #' 
 #' Uses raw values of FSC.H before it has been log transformed.
 #' 
 #' The graph of this regression is in the shared Dropbox and has an r squared
-#' value of 0.91. So it isn't perfect but a very good approximate.
+#' value of 0.78. So it isn't perfect but a very good approximate.
 #' 
 #' @param x vector of values of FSC.H to convert
 #' @return %% ~Describe the value returned %% If it is a LIST, use %%
@@ -28,5 +28,5 @@
 #' 
 #' @export FSCtoMicron
 FSCtoMicron <- function(x){
-  return((x + 75087.02)/104292.56)
+  return(1.036827e-05*x + 1.041811)
 }
