@@ -1,6 +1,4 @@
 #' 
-#' function
-#' 
 #' Eilers photosynthesis irradiance curve with varying y intercept
 #' 
 #' Uses the Eilers photosynthesis irradiance curve with an extra parameter allowing for a varying y-intercept. This allows for negative rates of photosynthesis to be modelled.

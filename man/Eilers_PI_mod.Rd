@@ -2,7 +2,7 @@
 % Please edit documentation in R/Eilers_PI_mod.R
 \name{Eilers_PI_mod}
 \alias{Eilers_PI_mod}
-\title{function}
+\title{Eilers photosynthesis irradiance curve with varying y intercept}
 \usage{
 Eilers_PI_mod(Pmax, Iopt, a, I, c)
 }
@@ -18,9 +18,6 @@ Eilers_PI_mod(Pmax, Iopt, a, I, c)
 \item{c}{The y intercept controlling the height of the curve}
 }
 \description{
-Eilers photosynthesis irradiance curve with varying y intercept
-}
-\details{
 Uses the Eilers photosynthesis irradiance curve with an extra parameter allowing for a varying y-intercept. This allows for negative rates of photosynthesis to be modelled.
 }
 \examples{
