@@ -12,7 +12,7 @@
 #' relationship between light intensity and the rate of photosynthesis in
 #' phytoplankton. Ecological Modelling, 42, 199–215.
 #' 
-#' @export Eilers_inhib
+#' @export Eilers_Inhib
 
 
 Eilers_Inhib <- function(Pmax, Iopt, a){
