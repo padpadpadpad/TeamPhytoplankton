@@ -32,7 +32,7 @@
 read_data_Oxylab <- function(file.list, start.time){
   
   # file name
-  file <- x
+  file <- file.list
   
   # look for where the dataframe starts
   lines <- readLines(file)
@@ -68,18 +68,22 @@ read_data_Oxylab <- function(file.list, start.time){
   data$lightlevel[grep('Off', data$lightlevel)] <- 0
   
   # extract numbers from column - should be in the first row
-  for(i in 1:length(nrow(data))){
+  for(i in 1:nrow(data)){
     temp <- gregexpr("[0-9]+", data$lightlevel[i]) 
     try(
       data$lightlevel[i] <- tail(as.numeric(unique(unlist(regmatches(data$lightlevel[i], temp)))),1)
       , silent = T)
   }
   
+  
   # make all lightlevels that are "", NA
   data$lightlevel[data$lightlevel == ''] <- NA
   
   # make all the NAs the last logical value
   data$lightlevel <- zoo::na.locf(data$lightlevel)
+  
+  # make column numeric
+  data$lightlevel <- as.numeric(data$lightlevel)
   
   # column for identifier
   data$identifier <- basename(file)
