@@ -82,11 +82,17 @@ read_data_Oxylab <- function(file.list, start.time){
   # make all the NAs the last logical value
   data$lightlevel <- zoo::na.locf(data$lightlevel)
   
+  # if NA there make them 0
+  data$lightlevel[is.na(data$lightlevel)] <- 0
+  
   # make column numeric
   data$lightlevel <- as.numeric(data$lightlevel)
   
   # column for identifier
   data$identifier <- basename(file)
+  
+  # remove file extension
+  data$identifier = gsub("\\.csv.*", "", data$identifier)
   
   return(data)
   
