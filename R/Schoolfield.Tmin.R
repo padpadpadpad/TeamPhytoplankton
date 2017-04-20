@@ -19,9 +19,9 @@
 #' fits
 #' @param K Whether or not Topt is in Kelvin. Defaults to 'Y'. To override
 #' default use 'N'.
+#' @param bTopt Name of the column for maximal rate.
 #' @param id.col The column that identifies each curve. Is equivalent to the
 #' id.col from nlsLoop.
-#' @param bTopt Name of the column for maximal rate.
 #' @param range The range of temperatures from which you want the Kelvin to be
 #' taken, is centred around the optimal temperature. For range = 500 and Topt =
 #' 30, the temperatures would be from 30 - 250 and 30 + 250.
