@@ -33,9 +33,6 @@ curve
 
 
 }
-\author{
-Daniel Padfield
-}
 \references{
 Platt, T., Sathyendranath, S. & Ravindran, P. (1990) Primary
 production by phytoplankton : analytic solutions for daily rates per unit
@@ -44,6 +41,8 @@ area of water surface. Proceedings: Biological Sciences, 241, 101–111.
 \seealso{
 \code{\link{Platt_PI}} for the original model fit.
 }
+\author{
+Daniel Padfield
+}
 \keyword{~kwd1}
 \keyword{~kwd2}
-

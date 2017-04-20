@@ -61,9 +61,6 @@ function (mdl, n, param)
   }
 
 }
-\author{
-Daniel Padfield
-}
 \references{
 Spiess, A.-N. & Neumeyer, N. (2010) An evaluation of R2 as an
 inadequate measure for nonlinear models in pharmacological and biochemical
@@ -74,6 +71,8 @@ http://stackoverflow.com/questions/14530770/calculating-r2-for-a-nonlinear-model
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
+\author{
+Daniel Padfield
+}
 \keyword{~kwd1}
 \keyword{~kwd2}
-

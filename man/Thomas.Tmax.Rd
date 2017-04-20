@@ -26,9 +26,6 @@ Calculates the Tmax for the thermal response curve by adding w/2 onto Topt.
 
 
 }
-\author{
-Daniel Padfield
-}
 \references{
 Thomas, M.K., Kremer, C.T., Klausmeier, C. a & Litchman, E.
 (2012) A global pattern of thermal adaptation in marine phytoplankton.
@@ -41,6 +38,8 @@ temperature traits. Global Ecology and Biogeography, 25, 75-86.
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
+\author{
+Daniel Padfield
+}
 \keyword{~kwd1}
 \keyword{~kwd2}
-

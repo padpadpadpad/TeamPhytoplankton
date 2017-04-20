@@ -16,9 +16,6 @@ Eilers_Inhib(Pmax, Iopt, a)
 \description{
 Gives the ratio of actual Pmax and the Pmax that would occur if no inhibition occurred.
 }
-\author{
-Daniel Padfield
-}
 \references{
 Eilers, P.H.. & Peeters, J.C.. (1988) A model for the
 relationship between light intensity and the rate of photosynthesis in
@@ -27,4 +24,6 @@ phytoplankton. Ecological Modelling, 42, 199–215.
 \seealso{
 \code{\link{Eilers_PI}} and \code{\link{Eilers_mod_PI}} for fitting the Eilers photosynthesis irradiance curve
 }
-
+\author{
+Daniel Padfield
+}

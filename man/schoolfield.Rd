@@ -45,9 +45,6 @@ high temperatures.
 
 
 }
-\author{
-Daniel Padfield
-}
 \references{
 Schoolfield, R.M., Sharpe, P.J. & Magnuson, C.E. (1981)
 Non-linear regression of biological temperature-dependent rate models based
@@ -61,6 +58,8 @@ inactivation only modification of the Sharpe-Schoolfield model.
 \code{\link{Topt}} for calculating the optimum temperature of the
 Sharpe-Schoolfield model.
 }
+\author{
+Daniel Padfield
+}
 \keyword{~kwd1}
 \keyword{~kwd2}
-

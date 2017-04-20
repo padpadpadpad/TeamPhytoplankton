@@ -44,4 +44,3 @@ function (ln.c, Ea, temp, Tc, log = c("Y", "N"))
 \author{
 Daniel Padfield
 }
-

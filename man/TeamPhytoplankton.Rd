@@ -43,16 +43,15 @@ nlsLoop()
 ~~ simple examples of the most important functions ~~
 
 }
+\seealso{
+GitHub link - https://github.com/padpadpadpad/TeamPhytoplankton
+}
 \author{
 Daniel Padfield
 
 Maintainer: Daniel Padfield - d.padfieldscfc@gmail.com
 }
-\seealso{
-GitHub link - https://github.com/padpadpadpad/TeamPhytoplankton
-}
 \keyword{EVOLUTION,}
 \keyword{MODELLING}
 \keyword{NONLINEAR}
 \keyword{PLANKTON,}
-

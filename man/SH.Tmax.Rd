@@ -5,7 +5,7 @@
 \title{Empirically calculates the maximum temperature of a schoolfield.high model
 fit}
 \usage{
-SH.Tmax(data, prop, Tc, K = "Y", id.col, range)
+SH.Tmax(data, prop, Tc, K = "Y", bTopt, id.col, range)
 }
 \arguments{
 \item{data}{The parameter data frame}
@@ -18,6 +18,8 @@ fits}
 
 \item{K}{Whether or not Topt is in Kelvin. Defaults to 'Y'. To override
 default use 'N'.}
+
+\item{bTopt}{Name of the column for optimal rate.}
 
 \item{id.col}{The column that identifies each curve. Is equivalent to the
 id.col from nlsLoop.}
@@ -46,15 +48,14 @@ is less than the threshold proportion of bTpeak above Topt.
 
 
 }
-\author{
-Daniel Padfield
-}
 \references{
 %% ~put references to the literature/web site here ~
 }
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
+\author{
+Daniel Padfield
+}
 \keyword{~kwd1}
 \keyword{~kwd2}
-

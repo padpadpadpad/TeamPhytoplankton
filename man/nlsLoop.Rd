@@ -6,7 +6,7 @@
 possible fit.}
 \usage{
 nlsLoop(data, model, tries, id_col, param_bds, r2 = "N", supp.errors = "N",
-  AICc = "Y", ...)
+  AICc = "Y", control, ...)
 }
 \arguments{
 \item{data}{Data that includes the rates}
@@ -78,9 +78,6 @@ nlsLoop(PI_data,
                    
 
 }
-\author{
-Daniel Padfield
-}
 \seealso{
 \code{\link{quasi.r2}} for details on the calculation of r squared
 values for non linear models.
@@ -90,4 +87,6 @@ function.
 
 See AICc in the AICcmodavg package for application of AICc.
 }
-
+\author{
+Daniel Padfield
+}

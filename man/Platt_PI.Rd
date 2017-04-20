@@ -38,9 +38,6 @@ negative values for some parameters.
 
 
 }
-\author{
-Daniel Padfield
-}
 \references{
 Platt, T., Sathyendranath, S. & Ravindran, P. (1990) Primary
 production by phytoplankton : analytic solutions for daily rates per unit
@@ -51,6 +48,8 @@ area of water surface. Proceedings: Biological Sciences, 241, 101–111.
 irradiance curve. \code{\link{Pmax}} for getting the maximal photosynthetic
 rate of the Platt fitted curve.
 }
+\author{
+Daniel Padfield
+}
 \keyword{~kwd1}
 \keyword{~kwd2}
-

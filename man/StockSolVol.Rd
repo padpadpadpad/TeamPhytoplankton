@@ -39,4 +39,3 @@ Daniel Padfield
 }
 \keyword{~kwd1}
 \keyword{~kwd2}
-

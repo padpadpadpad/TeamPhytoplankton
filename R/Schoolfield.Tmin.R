@@ -21,6 +21,7 @@
 #' default use 'N'.
 #' @param id.col The column that identifies each curve. Is equivalent to the
 #' id.col from nlsLoop.
+#' @param bTopt Name of the column for maximal rate.
 #' @param range The range of temperatures from which you want the Kelvin to be
 #' taken, is centred around the optimal temperature. For range = 500 and Topt =
 #' 30, the temperatures would be from 30 - 250 and 30 + 250.
@@ -50,7 +51,7 @@ SH.Tmin <- function(data, prop, Tc, K = 'Y', id.col, range) {
                                      temp = temp$K,
                                      Tc = Tc)
       
-      min2 <- max(temp$K[which(temp$pred < log(exp(data[, 'bTpeak'][data[,id.col] == id2[i]]) * prop) & temp$K < (data[, 'Topt'][data[,id.col]== id2[i]] + 273.15))]) - 273.15
+      min2 <- max(temp$K[which(temp$pred < log(exp(data[, bTopt][data[,id.col] == id2[i]]) * prop) & temp$K < (data[, 'Topt'][data[,id.col]== id2[i]] + 273.15))]) - 273.15
     }
     
     if(K == 'Y'){
@@ -62,7 +63,7 @@ SH.Tmin <- function(data, prop, Tc, K = 'Y', id.col, range) {
                                      temp = temp$K,
                                      Tc = Tc)
       
-      min2 <- max(temp$K[which(temp$pred < log(exp(data[, 'bTpeak'][data[,id.col] == id2[i]]) * prop) & temp$K < (data[, 'Topt'][data[,id.col]== id2[i]]))])
+      min2 <- max(temp$K[which(temp$pred < log(exp(data[, bTopt][data[,id.col] == id2[i]]) * prop) & temp$K < (data[, 'Topt'][data[,id.col]== id2[i]]))])
     }
     
     min <- rbind(min, min2)

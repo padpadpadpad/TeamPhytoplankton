@@ -49,13 +49,12 @@ inv.temp(y, 'N', Tc = 15)
 
 
 }
-\author{
-Daniel Padfield
-}
 \references{
 %% ~put references to the literature/web site here ~
 }
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
-
+\author{
+Daniel Padfield
+}

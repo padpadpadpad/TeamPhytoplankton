@@ -15,6 +15,7 @@
 #' fits
 #' @param K Whether or not Topt is in Kelvin. Defaults to 'Y'. To override
 #' default use 'N'.
+#' @param bTopt Name of the column for optimal rate.
 #' @param id.col The column that identifies each curve. Is equivalent to the
 #' id.col from nlsLoop.
 #' @param range The range of temperatures from which you want the Kelvin to be
@@ -31,9 +32,13 @@
 #' 
 #' 
 #' @export SH.Tmax
-SH.Tmax <- function(data, prop, Tc, K = 'Y', id.col, range) {
+SH.Tmax <- function(data, prop, Tc, K = 'Y', bTopt, id.col, range) {
   
+  # create id
   id2 <- unique(data[, id.col])
+  
+  # create rate to be lower than
+  prop_bTopt <- log(exp(data[, bTopt])*prop)
   
   max <- NULL
   
@@ -47,7 +52,7 @@ SH.Tmax <- function(data, prop, Tc, K = 'Y', id.col, range) {
                                      temp = temp$K,
                                      Tc = Tc)
       
-      max2 <- min(temp$K[which(temp$pred < log(exp(data[, 'bTpeak'][data[,id.col] == id2[i]]) * prop) & temp$K > (data[, 'Topt'][data[,id.col]== id2[i]] + 273.15))]) - 273.15
+      max2 <- min(temp$K[which(temp$pred < prop_bTopt[i] & temp$K > (data[, 'Topt'][data[,id.col]== id2[i]] + 273.15))]) - 273.15
     }
     
     if(K == 'Y'){
@@ -59,7 +64,7 @@ SH.Tmax <- function(data, prop, Tc, K = 'Y', id.col, range) {
                                      temp = temp$K,
                                      Tc = Tc)
       
-      max2 <- max(temp$K[which(temp$pred < log(exp(data[, 'bTpeak'][data[,id.col] == id2[i]]) * prop) & temp$K > (data[, 'Topt'][data[,id.col]== id2[i]]))])
+      max2 <- min(temp$K[which(temp$pred < prop_bTopt[i] & temp$K > (data[, 'Topt'][data[,id.col] == id2[i]]))])
     }
     
     max <- rbind(max, max2)

@@ -26,9 +26,6 @@ data$c0 <- Eilers_PI_mod(1000, 600, 50, data$light, 0)
 plot(c0 ~ light, data)
 
 }
-\author{
-Daniel Padfield
-}
 \references{
 Eilers, P.H.. & Peeters, J.C.. (1988) A model for the
 relationship between light intensity and the rate of photosynthesis in
@@ -38,4 +35,6 @@ phytoplankton. Ecological Modelling, 42, 199–215.
 \code{\link{Eilers_PI}} for fitting the photosynthesis
 irradiance model without a varying y intercept
 }
-
+\author{
+Daniel Padfield
+}

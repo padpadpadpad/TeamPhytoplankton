@@ -25,6 +25,8 @@ id.col from nlsLoop.}
 \item{range}{The range of temperatures from which you want the Kelvin to be
 taken, is centred around the optimal temperature. For range = 500 and Topt =
 30, the temperatures would be from 30 - 250 and 30 + 250.}
+
+\item{bTopt}{Name of the column for maximal rate.}
 }
 \value{
 %% ~Describe the value returned %% If it is a LIST, use %%
@@ -49,15 +51,14 @@ the column names for the function to run.
 
 
 }
-\author{
-Daniel Padfield
-}
 \references{
 %% ~put references to the literature/web site here ~
 }
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
+\author{
+Daniel Padfield
+}
 \keyword{~kwd1}
 \keyword{~kwd2}
-

@@ -47,9 +47,6 @@ plot(ThomasTRC(100, 20,20, temp = temp) ~ temp)
 
 
 }
-\author{
-Daniel Padfield
-}
 \references{
 Thomas, M.K., Kremer, C.T., Klausmeier, C. a & Litchman, E.
 (2012) A global pattern of thermal adaptation in marine phytoplankton.
@@ -63,6 +60,8 @@ temperature traits. Global Ecology and Biogeography, 25, 75-86.
 \code{\link{schoolfield.high}} and \code{\link{schoolfield}} for
 fitting alternative thermal response curves.
 }
+\author{
+Daniel Padfield
+}
 \keyword{~kwd1}
 \keyword{~kwd2}
-

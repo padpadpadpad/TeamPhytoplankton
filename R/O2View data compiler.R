@@ -19,6 +19,7 @@
 #' 
 #' @param file.list A list of O2 view files
 #' @param start.time The row at which you want data to be collected from
+#' @param cat whether you want the files printed to the console as they progress
 #' @return a dataframe of the combined Oxylab files with a column identifying each file
 #' @author Daniel Padfield
 #' @examples
@@ -29,10 +30,13 @@
 #' 
 #' @export read_data_Oxylab
 
-read_data_Oxylab <- function(file.list, start.time){
+read_data_Oxylab <- function(file.list, start.time, cat){
+  if(missing(cat)){cat <- 'N'}
   
   # file name
   file <- file.list
+  
+  if(cat == 'Y'){cat(file, '\n')}
   
   # look for where the dataframe starts
   lines <- readLines(file)
@@ -46,7 +50,7 @@ read_data_Oxylab <- function(file.list, start.time){
   data <- data[row.start:nrow(data),]
   
   # minus the last three rows
-  row.n <- nrow(data) - 3
+  row.n <- nrow(data) - 4
   data <- data[1:row.n,]
   
   # select columns that are needed - depending on software used with Oxylab, this can be 1, 2, 8 or 1, 2, 7 - always the last column?
@@ -78,6 +82,7 @@ read_data_Oxylab <- function(file.list, start.time){
   
   # make all lightlevels that are "", NA
   data$lightlevel[data$lightlevel == ''] <- NA
+  if(is.na(data$lightlevel[1])){data$lightlevel[1] <- 0}
   
   # make all the NAs the last logical value
   data$lightlevel <- zoo::na.locf(data$lightlevel)

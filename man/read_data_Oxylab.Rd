@@ -4,12 +4,14 @@
 \alias{read_data_Oxylab}
 \title{Binds desired O2 view files together}
 \usage{
-read_data_Oxylab(file.list, start.time)
+read_data_Oxylab(file.list, start.time, cat)
 }
 \arguments{
 \item{file.list}{A list of O2 view files}
 
 \item{start.time}{The row at which you want data to be collected from}
+
+\item{cat}{whether you want the files printed to the console as they progress}
 }
 \value{
 a dataframe of the combined Oxylab files with a column identifying each file
@@ -43,4 +45,3 @@ compiled.data <- ldply(list.of.my.files, read_data_Oxylab, start.time = 120)
 \author{
 Daniel Padfield
 }
-
