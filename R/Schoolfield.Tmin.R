@@ -35,7 +35,7 @@
 #' 
 #' 
 #' @export SH.Tmin
-SH.Tmin <- function(data, prop, Tc, K = 'Y', id.col, range) {
+SH.Tmin <- function(data, prop, Tc, K = 'Y', bTopt, id.col, range) {
   
   id2 <- unique(data[, id.col])
   
