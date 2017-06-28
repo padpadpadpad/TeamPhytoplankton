@@ -3,3 +3,5 @@
 .RData
 .Rhistory
 .TeamPhytoplankton.Rproj
+.DS_Store
+R/.DS_Store
