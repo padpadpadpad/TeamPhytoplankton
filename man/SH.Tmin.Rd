@@ -5,7 +5,7 @@
 \title{Empirically calculates the minimum temperature of a schoolfield.high model
 fit}
 \usage{
-SH.Tmin(data, prop, Tc, K = "Y", id.col, range)
+SH.Tmin(data, prop, Tc, K = "Y", bTopt, id.col, range)
 }
 \arguments{
 \item{data}{The parameter data frame}
@@ -19,14 +19,14 @@ fits}
 \item{K}{Whether or not Topt is in Kelvin. Defaults to 'Y'. To override
 default use 'N'.}
 
+\item{bTopt}{Name of the column for maximal rate.}
+
 \item{id.col}{The column that identifies each curve. Is equivalent to the
 id.col from nlsLoop.}
 
 \item{range}{The range of temperatures from which you want the Kelvin to be
 taken, is centred around the optimal temperature. For range = 500 and Topt =
 30, the temperatures would be from 30 - 250 and 30 + 250.}
-
-\item{bTopt}{Name of the column for maximal rate.}
 }
 \value{
 %% ~Describe the value returned %% If it is a LIST, use %%
